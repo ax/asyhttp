@@ -80,7 +80,7 @@ Example
 	loop(urls=requests,process_out=process_output)
 
 asyhttp loop's ``**kwargs``
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - ``urls``
 - ``process_out``
 - ``proxy``
