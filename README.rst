@@ -2,6 +2,10 @@
 asyhttp
 =======
 
+.. image:: https://badge.fury.io/py/asyhttp.svg
+   :target: https://pypi.org/project/asyhttp
+   :alt: Latest PyPI package version
+
 This is asyhttp, a simple module to perform asynchronous HTTP requests using asyncio and aiohttp.
 
 It provides a trivial way to perform a set of async HTTP requests.
@@ -64,6 +68,10 @@ In your custom code you can process:
 Example
 """""""
 
+.. code:: 
+
+	pip install asyhttp
+
 .. code:: python
 
 	from asyhttp import loop
@@ -75,6 +83,7 @@ Example
 .. code:: python
 
 	from asyhttp import loop
+
 	def process_output(url,return_code,reason,resp_body,user_data):
 		if return_code == 200:
 			sys.stdout.write("url")
