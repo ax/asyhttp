@@ -15,12 +15,14 @@ Features
 
 How to use loop()
 -----------------
-asyhttp loop() accepts some ``**kwargs``
+asyhttp loop() accepts some ``args``
 
 - ``urls`` a set of dictionaries, each dict represent an HTTP request.
-- ``proxy`` proxt URL, str (optional)
+- ``proxy`` (str) proxt URL, str (optional).
 - ``process_out`` a user defined function that can be used to process the response of each HTTP request.
-  It will be called by the async function that perform each HTTP request, as soon as the response arrive. (optional) 
+  It will be called by the async function that perform each HTTP request, as soon as the response arrive (optional). 
+- ``redirects`` (bool) – If set to True, follow redirects. False by default (optional).
+- ``verify_tls`` (bool) True for check TLS cert validation, False by default (optional). 
 
 Getting started
 ---------------
@@ -57,6 +59,7 @@ In your custom code you can process:
 - return_code 
 - reason
 - resp_body
+- user_data
 
 Example
 """""""
@@ -72,14 +75,14 @@ Example
 .. code:: python
 
 	from asyhttp import loop
-	def process_output(url,return_code,reason,resp_body):
+	def process_output(url,return_code,reason,resp_body,user_data):
 		if return_code == 200:
 			sys.stdout.write("url")
 
 	requests = [{'url':'http://exam.ple/page.html', 'method':'GET'}]
 	loop(urls=requests,process_out=process_output)
 
-asyhttp loop's ``**kwargs``
+asyhttp loop's ``args``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - ``urls``
 - ``process_out``

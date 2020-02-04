@@ -2,6 +2,7 @@
 # asyhttp.py
 # ----------
 # author: ax
+# author: pyno
 #
 # This is asyhttp, a simple module to perform async HTTP requests using asyncio and aiohttp.
 # It provides a trivial way to perform a set of async HTTP requests.
@@ -23,7 +24,7 @@ def loop(urls, process_out=None, proxy='', verify_tls=False, redirects=False, ma
     if process_out:
         process_output = process_out
     else:
-        def process_output(url,return_code,reason,resp_body):
+        def process_output(url,return_code,reason,resp_body,usr_data):
             sys.stdout.write(" [>] "+str(return_code)+" : "+url+"\n")
 
     try:
