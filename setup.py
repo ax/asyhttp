@@ -6,7 +6,7 @@ with open("README.rst", "r") as fh:
 setup(
   name = 'asyhttp',
   packages = ['asyhttp'],
-  version = '0.1',
+  version = '0.2',
   description = 'Simple module to perform asynchronous HTTP requests using asyncio and aiohttp',
   long_description=long_description,
   author = 'ax',

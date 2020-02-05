@@ -14,19 +14,17 @@ from aiohttp import ClientSession, TCPConnector, client_exceptions
 from aiohttp_proxy import ProxyConnector, ProxyType
 import sys
 
-version = "0.1"
+version = "0.2"
 
 def loop(urls, process_out=None, proxy='', verify_tls=False, redirects=False, max_concurrent=1000, usrdata={}):
     if len(urls) < 1:
         sys.stdout.write(" [!] No URL list in loop.\n [!] Bye!\n")
         exit(1)
-
     if process_out:
         process_output = process_out
     else:
         def process_output(url,return_code,reason,resp_body,usr_data):
             sys.stdout.write(" [>] "+str(return_code)+" : "+url+"\n")
-
     try:
         loop = asyncio.get_event_loop()
         loop.run_until_complete(_run_tasks(urls, proxy, max_concurrent, process_output, verify_tls, redirects, usrdata))
