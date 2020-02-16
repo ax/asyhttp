@@ -43,7 +43,7 @@ Getting started
 Use cases
 ---------
 asyhttp loop can be useful to write quick bruteforces against vulnerable systems
-or as a core for tools like dirfister.
+or as a core for tools like `dirfy <https://github.com/pyno/dirfy/>`_.
 
 An early version of this code comes from https://pawelmhm.github.io/asyncio/python/aiohttp/2016/04/22/asyncio-aiohttp.html
 
